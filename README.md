@@ -1,259 +1,200 @@
-<div align="center">
-  <br />
-    <a href="#" target="_blank">
-      <img src="./nonRelatedAssets/preview.png" alt="Employee Attendance System">
-    </a>
-  <br />
+Employee Attendance System — MERN
 
-  <br />
-  <div>
-    <img src="https://img.shields.io/badge/React%20JS-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" alt="reactdotjs" />
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="javascript" />
-    <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="html5" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="css3" />
-    <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="nojedotjs" />
-    <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" alt="expressjs" />
-    <img src="https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD" alt="nodemon" />
-    <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
-  </div>
+A complete attendance tracking platform with Employee and Manager roles.
+Employees can mark attendance daily, while Managers can view and manage team attendance with dashboards, filtering, and reporting.
 
-  <h1 align="center">Employee Attendance System - MERN</h1>
+🚀 Tech Stack
+Frontend
 
-   <div align="center">
-     The Employee Attendance System is a web-based solution designed to track employee attendance and work hours efficiently. Built using React.js, HTML, CSS, and JavaScript for the frontend and powered by Node.js for the backend, it ensures seamless performance and scalability. The system supports MongoDB for secure and reliable data storage. Key features include user authentication and role management, employee check-in and check-out, automated work hour calculation, real-time attendance tracking, and comprehensive reporting with data visualization, making it a powerful tool for workforce management. 🚀
-    </div>
-</div>
+React.js
 
-## 📋 <a name="table">Table of Contents</a>
+Redux Toolkit / Zustand
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 📁 [Folder Structure](#folder-structure)
-5. 🤸 [Quick Start](#quick-start)
-6. 🚀 [Usage](#usage)
-7. 🔗 [API Endpoints](#api-endpoints)
-8. 🐞 [Troubleshooting](#troubleshooting)
-9. ✨ [Contributing](#contributing)
+HTML5, CSS3, JavaScript
 
-## <a name="introduction">🤖 Introduction</a>
+Backend
 
-The Employee Attendance System is built with React.js, Node.js, and MongoDB to track attendance efficiently. Key features include user authentication, role management, check-in/out, automated work hour calculation, real-time tracking, and detailed reports, ensuring seamless workforce management and reducing manual workload.
+Node.js
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+Express.js
 
-- React JS
-- JavaScript
-- HTML5
-- CSS3
-- Node JS
-- Express JS
-- Nodemon
-- MongoDB
+Database
 
-## <a name="features">🔋 Features</a>
+MongoDB (or PostgreSQL if preferred)
 
-### Admin Features:
+📌 Features
+👨‍💼 Employee Features
 
-👉 Add, Edit, and Delete Employee Attendance
+Register / Login
 
-👉 View All Attendance Records for a Selected User
+Check In / Check Out
 
-👉 Monthly Attendance Summary with Present, Absent, and Leave Days
+View attendance history (table or calendar)
 
-👉 User Management (Add, View, and Update User Details)
+Monthly summary (Present / Absent / Late / Half-Day)
 
-👉 Secure Admin Access with Role-Based Authorization
+Dashboard with quick stats
 
-### Employee Features:
+Profile page
 
-👉 View Own Attendance Records
+🧑‍💼 Manager Features
 
-👉 Attendance Summary by Month and Year
+Login
 
-### General Features:
+View all employees' attendance
 
-👉 User Authentication (Login, Registration)
+Filter by employee, date, status
 
-👉 Protected Routes using JWT Tokens
+Team attendance summary
 
-👉 Responsive UI for Desktop and Mobile Devices
+Export attendance as CSV
 
-## <a name="folder-structure">📁 Folder Structure</a>
+Dashboard with team statistics
 
-```bash
-Employee-Attendance-System-MERN/
-├── backend/                            # Backend Directory (Node.js, Express, MongoDB)
-│   ├── middleware/                     # Express Middlewares
-│   │   └── auth.js                     # Authentication Middleware
-│   ├── models/                         # Mongoose Models
-│   │   ├── Attendance.js               # User Schema
-│   │   └── User.js                     # Attendance Schema
-│   ├── routes/                         # API Routes
-│   │   ├── admin.js                    # Admin Routes
-│   │   ├── attendance.js               # Attendance Routes
-│   │   └── auth.js                     # Authentication Routes
-│   ├── .env.example                    # Examples of Environment Variables
-│   ├── .env.local                      # Environment Variables for backend
-│   └── server.js                       # Express Server Configuration
-├── frontend/                           # Frontend Directory (React.js)
-│   ├── public/                         # Public Assets and Index.html
-│   ├── src/                            # Source Code Folder
-│   │   ├── assets/                     # All Project Assets
-│   │   ├── components/                 # Reusable Components
-│   │   │   ├── Navbar.css              # Styles for Navbar Component
-│   │   │   └── Navbar.jsx              # Navigation Bar Component
-│   │   ├── pages/                      # React Pages (Screens)
-│   │   │   ├── AdminDashboardPage/     # Admin Dashboard for Attendance Management
-│   │   │   │   ├── AdminDashboard.css  # CSS Styles for Admin Dashboard
-│   │   │   │   └── AdminDashboard.jsx  # Admin Dashboard React Component
-│   │   │   ├── LoginPage/              # USer Login for Attendance Management
-│   │   │   │   ├── Login.css           # CSS Styles for User Login
-│   │   │   │   └── Login.jsx           # User Login React Component
-│   │   │   ├── OverviewPage/           # Attendance Details Overview
-│   │   │   │   ├── Overview.css        # CSS Styles for Attendance Overview
-│   │   │   │   └── Overview.jsx        # Attendance Details Overview React Component
-│   │   │   └── RegisterPage/           # User Registration Page
-│   │   │       ├── Register.css        # CSS Styles for User Registration
-│   │   │       └── Register.jsx        # User Registration React Component
-│   │   ├── App.js                      # Main React Component
-│   │   ├── index.css                   # Global Styles
-│   │   └── index.js                    # React DOM Renderer
-│   ├── package-lock.json               # Packages & Dependencies
-│   └── package.json                    # Project Installed Packages & Dependencies
-└── nonRelatedAssets/                   # Assets for the GitHub Repo (Non-related to the Project)
-```
+Team calendar view
 
-## <a name="quick-start">🤸 Quick Start</a>
+📁 Project Structure
+Employee-Attendance-System/
+│
+├── backend/
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── attendanceController.js
+│   │   └── dashboardController.js
+│   ├── middleware/
+│   │   └── authMiddleware.js
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Attendance.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── attendanceRoutes.js
+│   │   └── dashboardRoutes.js
+│   ├── config/
+│   │   └── db.js
+│   ├── .env
+│   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   └── store.js
+│   │   ├── features/
+│   │   │   ├── authSlice.js
+│   │   │   └── attendanceSlice.js
+│   │   ├── pages/
+│   │   │   ├── EmployeeDashboard.jsx
+│   │   │   ├── ManagerDashboard.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── MyAttendance.jsx
+│   │   │   └── Reports.jsx
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── CalendarView.jsx
+│   │   └── index.js
+│   ├── package.json
+│   └── README.md
 
-Follow these steps to set up the project locally on your machine.
+🗄️ Database Schema
+Users
+Field	Description
+id	Unique identifier
+name	Employee name
+email	Login email
+password	Hashed password
+role	employee / manager
+employeeId	Unique employee code
+department	Department name
+createdAt	Timestamp
+Attendance
+Field	Description
+id	Unique identifier
+userId	Reference to User
+date	Attendance date
+checkInTime	Time of check-in
+checkOutTime	Time of check-out
+status	present / absent / late / half-day
+totalHours	Calculated hours
+createdAt	Timestamp
+🔗 API Endpoints
+Auth
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
 
-**Prerequisites**
+Employee Attendance
+POST /api/attendance/checkin
+POST /api/attendance/checkout
+GET  /api/attendance/my-history
+GET  /api/attendance/my-summary
+GET  /api/attendance/today
 
-Make sure you have the following installed on your machine:
+Manager Attendance
+GET /api/attendance/all
+GET /api/attendance/employee/:id
+GET /api/attendance/summary
+GET /api/attendance/export
+GET /api/attendance/today-status
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+Dashboards
+GET /api/dashboard/employee
+GET /api/dashboard/manager
 
-**Cloning the Repository**
+📊 Dashboard Requirements
+Employee Dashboard
 
-```bash
-git clone https://github.com/MenathNDGD/Employee-Attendance-System-MERN.git
-cd Employee-Attendance-System-MERN
-```
+Today’s status (Checked In / Not Checked In)
 
-**Installation**
+Present / Absent / Late statistics for this month
 
-**Create a .env.local file in the backend folder**
+Total hours worked
 
-```bash
+Recent 7-day attendance
+
+Quick Check-In / Check-Out button
+
+Manager Dashboard
+
+Total employees
+
+Today’s present / absent count
+
+Late arrivals
+
+Weekly attendance chart
+
+Department-wise attendance chart
+
+List of absent employees
+
+⚙️ Environment Variables (.env)
 PORT=5000
-MONGO_URI=YOUR_MONGO_URI
-JWT_SECRET=tu8861sRFQyXDRH
-```
+MONGO_URI=your_mongo_db_url
+JWT_SECRET=your_secret_key
 
-**Setup Backend**
-
-```bash
+🚀 Setup Instructions
+Backend
 cd backend
-npx nodemon server.js
-```
+npm install
+npm run dev
 
-**Setup Frontend**
-
-```bash
+Frontend
 cd frontend
+npm install
 npm start
-```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-## <a name="usage">🚀 Usage</a>
+Visit: http://localhost:3000
 
-### Admin Login
+📦 Export Reports
 
-- Use the login credentials of an Admin user.
-- Access the Admin Dashboard to manage attendance.
+Managers can export attendance in CSV format.
 
-### Employee Login
+🤝 Contributing
 
-- Use employee login credentials.
-- View personal attendance records.
+Fork the repository
 
-### Admin Dashboard
+Create a branch
 
-- Select a user and view all attendance records.
-- Add, Edit, or Delete attendance day by day.
-- View monthly summaries for Present, Absent, and Leave days.
-
-## <a name="api-endpoints">🔗 API Endpoints</a>
-
-### Auth Routes
-
-- **POST** `/api/auth/register`: Register a new user
-- **POST** `/api/auth/login`: User login
-
-### Attendance Routes
-
-- **GET** `/api/attendance/:userId`: Get attendance by user
-- **GET** `/api/attendance/summary/:userId`: Get attendance summary by month
-- **POST** `/api/attendance`: Add attendance
-- **PUT** `/api/attendance/:id`: Update attendance
-- **DELETE** `/api/attendance/:id`: Delete attendance
-
-### Admin Routes
-
-- **GET** `/api/admin/users`: Get all users
-- **PUT** `/api/admin/user/:id`: Update user details
-
-## <a name="troubleshooting">🐞 Troubleshooting</a>
-
-### 1. MongoDB Connection Error:
-
-- Ensure your IP is whitelisted in MongoDB Atlas.
-- Double-check your `MONGO_URI` in the `.env.local` file.
-
-### 2. CORS Errors:
-
-- Check `cors()` configuration in `backend/server.js`.
-
-### 3. Invalid Token Error:
-
-- Make sure to clear `localStorage` and log in again:
-
-```javascript
-localStorage.removeItem("token");
-```
-
-## <a name="contributing">✨ Contributing</a>
-
-### 1. Fork the repo.
-
-### 2. Create a new branch:
-
-```bash
-git checkout -b feature-name
-```
-
-### 3. Make your changes.
-
-### 4. Commit your changes:
-
-```bash
-git commit -m 'Add some feature'
-```
-
-### 5. Push to the branch:
-
-```bash
-git push origin feature-name
-```
-
-### 6. Open a Pull Request.
-
-**Feel free to tailor these contents according to your specific preferences or any additional details you want to include!**
-
-- **Contributions:** Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
-
-- **Feedback:** If you have any feedback or suggestions, I would love to hear from you. Reach out via the contact form on the portfolio or open an issue on GitHub.
+Submit a PR
